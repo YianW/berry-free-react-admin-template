@@ -35,7 +35,7 @@ const CardWrapper = styled(MainCard)(({ theme }) => ({
     }
 }));
 
-TotalIncomeDarkCard = ({ isLoading }) => {
+const TotalIncomeDarkCard = ({ isLoading }) => {
     const theme = useTheme();
 
     return (

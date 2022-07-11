@@ -1,21 +1,23 @@
 import { lazy } from 'react';
 
-// project imports
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 
-// dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 
-// utilities routing
-const UtilsTypography = Loadable(lazy(() => import('views/utilities/Typography')));
-const UtilsColor = Loadable(lazy(() => import('views/utilities/Color')));
-const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
-const UtilsMaterialIcons = Loadable(lazy(() => import('views/utilities/MaterialIcons')));
-const UtilsTablerIcons = Loadable(lazy(() => import('views/utilities/TablerIcons')));
+const UtilsNftOwns = Loadable(lazy(() => import('views/marketplace/NftOwns')));
+const UtilsNftMarket = Loadable(lazy(() => import('views/marketplace/NftMarket')));
 
-// sample page routing
-const SamplePage = Loadable(lazy(() => import('views/sample-page')));
+const TradeConPt = Loadable(lazy(() => import('views/trade/ConPt')));
+const TradeBuyTokens = Loadable(lazy(() => import('views/trade/BuyTokens')));
+const TradeSwap = Loadable(lazy(() => import('views/trade/Swap')));
+
+const TxHistory = Loadable(lazy(() => import('views/transaction/TxHistory')));
+
+const WalletTk = Loadable(lazy(() => import('views/wallet/Tokens')));
+const WalletNft = Loadable(lazy(() => import('views/wallet/Nfts')));
+
+const AuthLogin3 = Loadable(lazy(() => import('views/pages/authentication/authentication3/Login3')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -25,7 +27,7 @@ const MainRoutes = {
     children: [
         {
             path: '/',
-            element: <DashboardDefault />
+            element: <AuthLogin3 />
         },
         {
             path: 'dashboard',
@@ -40,8 +42,8 @@ const MainRoutes = {
             path: 'utils',
             children: [
                 {
-                    path: 'util-typography',
-                    element: <UtilsTypography />
+                    path: 'util-NftOwns',
+                    element: <UtilsNftOwns />
                 }
             ]
         },
@@ -49,41 +51,64 @@ const MainRoutes = {
             path: 'utils',
             children: [
                 {
-                    path: 'util-color',
-                    element: <UtilsColor />
+                    path: 'util-NftMarket',
+                    element: <UtilsNftMarket />
                 }
             ]
         },
         {
-            path: 'utils',
+            path: 'trade',
             children: [
                 {
-                    path: 'util-shadow',
-                    element: <UtilsShadow />
+                    path: 'trade-ConPt',
+                    element: <TradeConPt />
                 }
             ]
         },
         {
-            path: 'icons',
+            path: 'trade',
             children: [
                 {
-                    path: 'tabler-icons',
-                    element: <UtilsTablerIcons />
+                    path: 'trade-BuyTokens',
+                    element: <TradeBuyTokens />
                 }
             ]
         },
         {
-            path: 'icons',
+            path: 'trade',
             children: [
                 {
-                    path: 'material-icons',
-                    element: <UtilsMaterialIcons />
+                    path: 'trade-Swap',
+                    element: <TradeSwap />
                 }
             ]
         },
         {
-            path: 'sample-page',
-            element: <SamplePage />
+            path: 'transaction',
+            children: [
+                {
+                    path: 'txHistory',
+                    element: <TxHistory />
+                }
+            ]
+        },
+        {
+            path: 'wallet',
+            children: [
+                {
+                    path: 'tokens',
+                    element: <WalletTk />
+                }
+            ]
+        },
+        {
+            path: 'wallet',
+            children: [
+                {
+                    path: 'nfts',
+                    element: <WalletNft />
+                }
+            ]
         }
     ]
 };

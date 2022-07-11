@@ -1,22 +1,22 @@
 // assets
-import { IconDashboard } from '@tabler/icons';
+// import { IconDashboard } from '@tabler/icons';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 // constant
-const icons = { IconDashboard };
+const icons = { HomeOutlinedIcon };
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
 const dashboard = {
     id: 'dashboard',
-    title: 'Dashboard',
     type: 'group',
     children: [
         {
             id: 'default',
-            title: 'Dashboard',
+            title: 'Home',
             type: 'item',
             url: '/dashboard/default',
-            icon: icons.IconDashboard,
+            icon: icons.HomeOutlinedIcon,
             breadcrumbs: false
         }
     ]

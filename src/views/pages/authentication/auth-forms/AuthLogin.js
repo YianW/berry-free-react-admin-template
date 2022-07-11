@@ -232,6 +232,7 @@ const FirebaseLogin = ({ ...others }) => {
                                     type="submit"
                                     variant="contained"
                                     color="secondary"
+                                    href="/free/dashboard/default"
                                 >
                                     Sign in
                                 </Button>

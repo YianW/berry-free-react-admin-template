@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import Axios from 'axios';
+
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import {
@@ -35,14 +37,14 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Google from 'assets/images/icons/social-google.svg';
 
-// ============================|| FIREBASE - LOGIN ||============================ //
-
 const FirebaseLogin = ({ ...others }) => {
     const theme = useTheme();
     const scriptedRef = useScriptRef();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
     const customization = useSelector((state) => state.customization);
     const [checked, setChecked] = useState(true);
+    const [userID, setUserId] = useState('');
+    const [password, setPassword] = useState('');
 
     const googleHandler = async () => {
         console.error('Login');
@@ -55,6 +57,20 @@ const FirebaseLogin = ({ ...others }) => {
 
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert('start');
+        const postRq = {
+            Username: userID,
+            Password: password,
+            Role: 'superadmin'
+        };
+        Axios.post('http://localhost:8080/api/login', postRq).then((response) => {
+            console.log(response);
+            alert('end');
+        });
     };
 
     return (
@@ -79,6 +95,7 @@ const FirebaseLogin = ({ ...others }) => {
                             </Box>
                             Sign in with Google
                         </Button>
+                        <Typography textAlign={'center'}>(No 3rd party authentication yet)</Typography>
                     </AnimateButton>
                 </Grid>
                 <Grid item xs={12}>
@@ -113,7 +130,7 @@ const FirebaseLogin = ({ ...others }) => {
                 </Grid>
                 <Grid item xs={12} container alignItems="center" justifyContent="center">
                     <Box sx={{ mb: 2 }}>
-                        <Typography variant="subtitle1">Sign in with Email address</Typography>
+                        <Typography variant="subtitle1">Sign in with Username</Typography>
                     </Box>
                 </Grid>
             </Grid>
@@ -144,25 +161,28 @@ const FirebaseLogin = ({ ...others }) => {
                     }
                 }}
             >
-                {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
+                {({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => (
                     <form noValidate onSubmit={handleSubmit} {...others}>
                         <FormControl fullWidth error={Boolean(touched.email && errors.email)} sx={{ ...theme.typography.customInput }}>
-                            <InputLabel htmlFor="outlined-adornment-email-login">Email Address / Username</InputLabel>
+                            <InputLabel htmlFor="outlined-adornment-email-login">Username</InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-email-login"
                                 type="email"
                                 value={values.email}
                                 name="email"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                label="Email Address / Username"
+                                onChange={(e) => {
+                                    setUserId(e.target.value);
+                                }}
+                                // onChange={handleChange}
+                                label="Username"
                                 inputProps={{}}
                             />
-                            {touched.email && errors.email && (
+                            {/* {touched.email && errors.email && (
                                 <FormHelperText error id="standard-weight-helper-text-email-login">
                                     {errors.email}
                                 </FormHelperText>
-                            )}
+                            )} */}
                         </FormControl>
 
                         <FormControl
@@ -177,7 +197,9 @@ const FirebaseLogin = ({ ...others }) => {
                                 value={values.password}
                                 name="password"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
+                                onChange={(e) => {
+                                    setPassword(e.target.value);
+                                }}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
@@ -232,7 +254,8 @@ const FirebaseLogin = ({ ...others }) => {
                                     type="submit"
                                     variant="contained"
                                     color="secondary"
-                                    href="/free/dashboard/default"
+                                    // href="/free/dashboard/default"
+                                    onSubmit={handleSubmit}
                                 >
                                     Sign in
                                 </Button>

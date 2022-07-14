@@ -17,7 +17,7 @@ const TxHistory = Loadable(lazy(() => import('views/transaction/TxHistory')));
 const WalletTk = Loadable(lazy(() => import('views/wallet/Tokens')));
 const WalletNft = Loadable(lazy(() => import('views/wallet/Nfts')));
 
-const AuthLogin3 = Loadable(lazy(() => import('views/pages/authentication/authentication3/Login3')));
+const Unauth = Loadable(lazy(() => import('views/unauth')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -26,8 +26,8 @@ const MainRoutes = {
     element: <MainLayout />,
     children: [
         {
-            path: '/',
-            element: <AuthLogin3 />
+            path: '/unauthorized',
+            element: <Unauth />
         },
         {
             path: 'dashboard',

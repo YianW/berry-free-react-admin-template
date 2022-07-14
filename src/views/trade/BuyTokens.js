@@ -4,7 +4,6 @@ import SubCard from 'ui-component/cards/SubCard';
 import MainCard from 'ui-component/cards/MainCard';
 import { gridSpacing } from 'store/constant';
 
-import SelectTextFields from './SelItem';
 import BasicTabs from './TabMenu';
 
 const ConPt = () => (

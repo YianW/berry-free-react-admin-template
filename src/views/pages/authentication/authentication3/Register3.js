@@ -11,6 +11,8 @@ import Logo from 'ui-component/Logo';
 import AuthRegister from '../auth-forms/AuthRegister';
 import AuthFooter from 'ui-component/cards/AuthFooter';
 
+import SignUp from '../auth-forms/RegisterTest';
+
 // assets
 
 // ===============================|| AUTH3 - REGISTER ||=============================== //
@@ -28,9 +30,9 @@ const Register = () => {
                             <AuthCardWrapper>
                                 <Grid container spacing={2} alignItems="center" justifyContent="center">
                                     <Grid item sx={{ mb: 3 }}>
-                                        <Link to="#">
+                                        {/* <Link to="#">
                                             <Logo />
-                                        </Link>
+                                        </Link> */}
                                     </Grid>
                                     <Grid item xs={12}>
                                         <Grid
@@ -45,6 +47,7 @@ const Register = () => {
                                                         color={theme.palette.secondary.main}
                                                         gutterBottom
                                                         variant={matchDownSM ? 'h3' : 'h2'}
+                                                        href="/free/dashboard/default"
                                                     >
                                                         Sign up
                                                     </Typography>
@@ -60,7 +63,8 @@ const Register = () => {
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <AuthRegister />
+                                        {/* <AuthRegister /> */}
+                                        <SignUp />
                                     </Grid>
                                     <Grid item xs={12}>
                                         <Divider />

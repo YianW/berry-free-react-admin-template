@@ -2,7 +2,6 @@ import LoyaltyOutlinedIcon from '@mui/icons-material/LoyaltyOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
 
-// constant
 const icons = {
     LoyaltyOutlinedIcon,
     ShoppingCartOutlinedIcon,
@@ -38,28 +37,6 @@ const marketplace = {
             icon: icons.CurrencyExchangeOutlinedIcon,
             breadcrumbs: false
         }
-        // {
-        //     id: 'icons',
-        //     title: 'Icons',
-        //     type: 'collapse',
-        //     icon: icons.IconWindmill,
-        //     children: [
-        //         {
-        //             id: 'tabler-icons',
-        //             title: 'Tabler Icons',
-        //             type: 'item',
-        //             url: '/icons/tabler-icons',
-        //             breadcrumbs: false
-        //         },
-        //         {
-        //             id: 'material-icons',
-        //             title: 'Material Icons',
-        //             type: 'item',
-        //             url: '/icons/material-icons',
-        //             breadcrumbs: false
-        //         }
-        //     ]
-        // }
     ]
 };
 

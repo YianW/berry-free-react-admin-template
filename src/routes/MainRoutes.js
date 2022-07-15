@@ -7,6 +7,9 @@ const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')))
 
 const UtilsNftOwns = Loadable(lazy(() => import('views/marketplace/NftOwns')));
 const UtilsNftMarket = Loadable(lazy(() => import('views/marketplace/NftMarket')));
+const UtilsOrders = Loadable(lazy(() => import('views/marketplace/NftOrders')));
+const UtilsDetails = Loadable(lazy(() => import('views/marketplace/NftDetails')));
+const UtilsProjectDt = Loadable(lazy(() => import('views/marketplace/PjtDetails')));
 
 const TradeConPt = Loadable(lazy(() => import('views/trade/ConPt')));
 const TradeBuyTokens = Loadable(lazy(() => import('views/trade/BuyTokens')));
@@ -19,7 +22,12 @@ const WalletNft = Loadable(lazy(() => import('views/wallet/Nfts')));
 
 const Unauth = Loadable(lazy(() => import('views/unauth')));
 
-// ==============================|| MAIN ROUTING ||============================== //
+const SwapTkBrg = Loadable(lazy(() => import('views/swap/tokenBridge')));
+
+const SetUser = Loadable(lazy(() => import('views/settings/UserPermissions')));
+const SetWal = Loadable(lazy(() => import('views/settings/Wallets')));
+const SetAPI = Loadable(lazy(() => import('views/settings/APIKey')));
+
 
 const MainRoutes = {
     path: '/',
@@ -42,7 +50,7 @@ const MainRoutes = {
             path: 'utils',
             children: [
                 {
-                    path: 'util-NftOwns',
+                    path: 'util-NftCollect',
                     element: <UtilsNftOwns />
                 }
             ]
@@ -51,8 +59,35 @@ const MainRoutes = {
             path: 'utils',
             children: [
                 {
-                    path: 'util-NftMarket',
+                    path: 'util-NftPjt',
                     element: <UtilsNftMarket />
+                }
+            ]
+        },
+        {
+            path: 'utils',
+            children: [
+                {
+                    path: 'util-Details',
+                    element: <UtilsDetails />
+                }
+            ]
+        },
+        {
+            path: 'utils',
+            children: [
+                {
+                    path: 'util-ProjectDetails',
+                    element: <UtilsProjectDt />
+                }
+            ]
+        },
+        {
+            path: 'utils',
+            children: [
+                {
+                    path: 'util-Orders',
+                    element: <UtilsOrders />
                 }
             ]
         },
@@ -89,6 +124,42 @@ const MainRoutes = {
                 {
                     path: 'txHistory',
                     element: <TxHistory />
+                }
+            ]
+        },
+        {
+            path: 'swap',
+            children: [
+                {
+                    path: 'token-bridge',
+                    element: <SwapTkBrg />
+                }
+            ]
+        },
+        {
+            path: 'settings',
+            children: [
+                {
+                    path: 'users-permissions',
+                    element: <SetUser />
+                }
+            ]
+        },
+        {
+            path: 'settings',
+            children: [
+                {
+                    path: 'wallets',
+                    element: <SetWal />
+                }
+            ]
+        },
+        {
+            path: 'settings',
+            children: [
+                {
+                    path: 'api-integrations',
+                    element: <SetAPI />
                 }
             ]
         },

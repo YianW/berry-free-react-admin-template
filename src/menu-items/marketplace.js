@@ -1,14 +1,12 @@
-// assets
 import PhotoLibraryOutlinedIcon from '@mui/icons-material/PhotoLibraryOutlined';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
+import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
 
-// constant
 const icons = {
     PhotoLibraryOutlinedIcon,
-    AddPhotoAlternateOutlinedIcon
+    AddPhotoAlternateOutlinedIcon,
+    ReceiptLongOutlinedIcon
 };
-
-// ==============================|| MARKETPLACE MENU ITEMS ||============================== //
 
 const marketplace = {
     id: 'marketplace',
@@ -16,43 +14,33 @@ const marketplace = {
     type: 'group',
     children: [
         {
-            id: 'util-NftOwns',
-            title: 'Nft Owns',
+            id: 'util-NftProjects',
+            title: 'Nft Projects',
             type: 'item',
-            url: '/utils/util-NftOwns',
+            url: '/utils/util-NftPjt',
+            id: 'util-NftCollections',
+            title: 'Nft Collections',
+            type: 'item',
+            url: '/utils/util-NftCollect',
             icon: icons.PhotoLibraryOutlinedIcon,
             breadcrumbs: false
         },
         {
-            id: 'util-NftMarket',
-            title: 'Nft in Market',
+            id: 'util-NftProjects',
+            title: 'Nft Projects',
             type: 'item',
-            url: '/utils/util-NftMarket',
+            url: '/utils/util-NftPjt',
             icon: icons.AddPhotoAlternateOutlinedIcon,
             breadcrumbs: false
+        },
+        {
+            id: 'util-NftOrders',
+            title: 'Nft Orders',
+            type: 'item',
+            url: '/utils/util-Orders',
+            icon: icons.ReceiptLongOutlinedIcon,
+            breadcrumbs: false
         }
-        // {
-        //     id: 'icons',
-        //     title: 'Icons',
-        //     type: 'collapse',
-        //     icon: icons.IconWindmill,
-        //     children: [
-        //         {
-        //             id: 'tabler-icons',
-        //             title: 'Tabler Icons',
-        //             type: 'item',
-        //             url: '/icons/tabler-icons',
-        //             breadcrumbs: false
-        //         },
-        //         {
-        //             id: 'material-icons',
-        //             title: 'Material Icons',
-        //             type: 'item',
-        //             url: '/icons/material-icons',
-        //             breadcrumbs: false
-        //         }
-        //     ]
-        // }
     ]
 };
 

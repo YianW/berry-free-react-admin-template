@@ -38,24 +38,23 @@ export default function SignUp() {
         let role = data.get('minter');
         if (!role) {
             role = 'observer';
-        } else {
-            role = minter;
         }
+        // console.log(role);
         const postRq = {
             Username: data.get('username'),
             Password: data.get('password'),
             Role: role
         };
-        window.location.replace('/free');
-        // Axios.post('http://localhost:8080/api/register', postRq).then((response) => {
-        //     console.log(response);
+        // window.location.replace('/free');
+        Axios.post('http://localhost:8080/api/register', postRq).then((response) => {
+            console.log(response);
 
-        //     window.location.replace('free/login');
+            // window.location.replace('free/login');
 
-        //     if (response.status == 201) {
-        //         window.location.replace('free/login');
-        //     }
-        // });
+            if (response.status == 201) {
+                window.location.replace('/free');
+            }
+        });
     };
 
     return (

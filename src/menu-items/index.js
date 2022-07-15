@@ -1,15 +1,13 @@
 import dashboard from './dashboard';
-// import pages from './pages';
 import marketplace from './marketplace';
-// import other from './other';
-import trade from './tradeInvest';
-import transaction from './transaction';
-import wallet from './wallet';
+import transaction from './transfer';
+import swap from './swap';
+import settings from './settings';
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    items: [dashboard, marketplace, trade, transaction, wallet]
+    items: [dashboard, marketplace, transaction, swap, settings]
 };
 
 export default menuItems;

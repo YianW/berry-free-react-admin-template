@@ -47,7 +47,7 @@ export default function ComplexGrid() {
                     </Grid>
                     <Grid item>
                         <Typography variant="subtitle1" component="div">
-                            Mojo 19.00
+                            Price: 19.00
                         </Typography>
                     </Grid>
                 </Grid>

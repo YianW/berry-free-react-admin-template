@@ -2,7 +2,7 @@
     "name": "berry-material-react-free",
     "version": "3.2.0",
     "private": true,
-    "homepage": "https://berrydashboard.io/free",
+    "homepage": "https://yianw.github.io/dashboard_draft.github.io",
     "dependencies": {
         "@emotion/cache": "^11.9.3",
         "@emotion/react": "^11.9.3",
@@ -35,6 +35,8 @@
         "yup": "^0.32.11"
     },
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -73,6 +75,7 @@
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.30.1",
         "eslint-plugin-react-hooks": "4.6.0",
+        "gh-pages": "^4.0.0",
         "prettier": "^2.7.1",
         "sass": "^1.53.0"
     }

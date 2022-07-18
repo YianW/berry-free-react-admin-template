@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkberry_material_react_free=self.webpackChunkberry_material_react_free||[]).push([[606],{8606:function(e,r,a){a.r(r);var t=a(890),s=(a(2791),a(184));r.default=()=>(0,s.jsx)(s.Fragment,{children:(0,s.jsx)(t.Z,{children:"Please Login first."})})}}]);
+//# sourceMappingURL=606.aa9e02c9.chunk.js.map

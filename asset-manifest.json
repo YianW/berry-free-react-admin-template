@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dashboard_draft.github.io/static/css/main.e1b9e8b4.css",
-    "main.js": "/dashboard_draft.github.io/static/js/main.35439ab4.js",
+    "main.js": "/dashboard_draft.github.io/static/js/main.f82d6e2d.js",
     "static/js/494.cd5c7813.chunk.js": "/dashboard_draft.github.io/static/js/494.cd5c7813.chunk.js",
     "static/js/897.9d89aa80.chunk.js": "/dashboard_draft.github.io/static/js/897.9d89aa80.chunk.js",
     "static/js/781.8059548f.chunk.js": "/dashboard_draft.github.io/static/js/781.8059548f.chunk.js",
@@ -31,7 +31,7 @@
     "static/media/social-google.svg": "/dashboard_draft.github.io/static/media/social-google.9887eb8eb43729cb99f402cfa0de3c44.svg",
     "static/media/earning.svg": "/dashboard_draft.github.io/static/media/earning.b019e86a7ee117bd6bb2e8cab90c0db5.svg",
     "main.e1b9e8b4.css.map": "/dashboard_draft.github.io/static/css/main.e1b9e8b4.css.map",
-    "main.35439ab4.js.map": "/dashboard_draft.github.io/static/js/main.35439ab4.js.map",
+    "main.f82d6e2d.js.map": "/dashboard_draft.github.io/static/js/main.f82d6e2d.js.map",
     "494.cd5c7813.chunk.js.map": "/dashboard_draft.github.io/static/js/494.cd5c7813.chunk.js.map",
     "897.9d89aa80.chunk.js.map": "/dashboard_draft.github.io/static/js/897.9d89aa80.chunk.js.map",
     "781.8059548f.chunk.js.map": "/dashboard_draft.github.io/static/js/781.8059548f.chunk.js.map",
@@ -59,6 +59,6 @@
   },
   "entrypoints": [
     "static/css/main.e1b9e8b4.css",
-    "static/js/main.35439ab4.js"
+    "static/js/main.f82d6e2d.js"
   ]
 }

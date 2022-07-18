@@ -5,16 +5,8 @@ import {
     Box,
     Button,
     Checkbox,
-    Divider,
-    FormControl,
     FormControlLabel,
-    FormHelperText,
-    IconButton,
-    InputAdornment,
-    InputLabel,
-    OutlinedInput,
     TextField,
-    useMediaQuery
 } from '@mui/material';
 
 import SubCard from 'ui-component/cards/SubCard';
@@ -57,7 +49,6 @@ const ConPt = () => {
         const postRq = {
             merchant_id: data.get('merchantid'),
             user_vsys_addr: 'ATse3RcjEzwc5JHDPcduPYe4qA2mWhSNZaV',
-            mojo_amount: data.get('mojo'),
             pt_amount: data.get('point')
         };
         const config = {
@@ -68,7 +59,8 @@ const ConPt = () => {
         console.log(postRq);
         Axios.post('http://localhost:8000/exmojo/lopt-mojo', postRq, config)
             .then((response) => {
-                console.log('Transaction Succeeded. The transacgtion id is ', response);
+                console.log('Transaction Succeeded. The transaction id is ', response.data);
+                alert('Transaction Succeeded. The transaction id is ' + response.data);
             })
             .catch((error) => {
                 alert(error);
@@ -92,9 +84,8 @@ const ConPt = () => {
                                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                                     <TextField
                                         id="point"
-                                        label="Mojo"
-                                        name="mono"
-                                        defaultValue="0"
+                                        label="Point"
+                                        name="point"
                                         sx={{
                                             marginLeft: 5,
                                             marginRight: 5,
@@ -118,10 +109,10 @@ const ConPt = () => {
                                             </MenuItem>
                                         ))}
                                     </TextField>
-                                    <TextField
+                                    {/* <TextField
                                         disabled
                                         id="point"
-                                        label="Mojo"
+                                        label=""
                                         onChange={handleChange}
                                         sx={{
                                             marginTop: 2,
@@ -129,7 +120,7 @@ const ConPt = () => {
                                             marginBottom: 5,
                                             width: 200
                                         }}
-                                    />
+                                    /> */}
                                     <Grid>
                                         <FormControlLabel
                                             control={<Checkbox value="remember" color="primary" />}

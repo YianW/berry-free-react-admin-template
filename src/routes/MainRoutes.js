@@ -19,6 +19,8 @@ const WalletNft = Loadable(lazy(() => import('views/wallet/Nfts')));
 
 const Unauth = Loadable(lazy(() => import('views/unauth')));
 
+const PaySuccess = Loadable(lazy(() => import('views/notification/paySuccess')));
+
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -28,6 +30,10 @@ const MainRoutes = {
         {
             path: '/unauthorized',
             element: <Unauth />
+        },
+        {
+            path: '/pay-success',
+            element: <PaySuccess />
         },
         {
             path: 'dashboard',

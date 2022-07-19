@@ -34,7 +34,7 @@ export default function TitlebarImageList() {
                         </CardContent>
                         <CardActions>
                             <Button size="small">Share</Button>
-                            <Button size="small" href="/free/utils/util-ProjectDetails">Learn More</Button>
+                            <Button size="small" href="/dashboard_draft.github.io/#/free/utils/util-ProjectDetails">Learn More</Button>
                         </CardActions>
                     </Card>
                 ))

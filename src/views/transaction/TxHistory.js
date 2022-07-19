@@ -78,12 +78,12 @@ const ConPt = () => {
                                     alignItems: 'center'
                                 }}
                             >
-                                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                                <Box component="form" /*onSubmit={handleSubmit}*/ noValidate sx={{ mt: 1 }}>
                                     <TextField
                                         id="point"
                                         label="Receiver Address"
                                         name="addr"
-                                        defaultValue="ADDRESS"
+                                        // defaultValue="ADDRESS"
                                         sx={{
                                             marginLeft: 5,
                                             marginRight: 5,

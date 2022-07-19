@@ -25,7 +25,7 @@ export default function TitlebarBelowMasonryImageList() {
                                 <IconButton
                                     sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                                     aria-label={`info about ${item.title}`}
-                                    href="/free/utils/util-Details"
+                                    href="/dashboard_draft.github.io/#/free/utils/util-Details"
                                 >
                                     <InfoIcon />
                                 </IconButton>

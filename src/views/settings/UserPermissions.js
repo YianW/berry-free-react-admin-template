@@ -64,7 +64,7 @@ export default function SignUp() {
             <MainCard title="Add/Remove Users">
                 <Card sx={{ overflow: 'hidden' }}>
                     <Container component="main" maxWidth="xs" sx={{ mb: 5 }}>
-                        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                        <Box component="form" noValidate /*onSubmit={handleSubmit}*/ sx={{ mt: 3 }}>
                             <Grid container spacing={2}>
                                 <Grid>
                                     <TextField required fullWidth id="username" label="Username" name="username" autoComplete="username" />

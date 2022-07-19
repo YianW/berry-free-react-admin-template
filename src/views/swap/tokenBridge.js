@@ -102,7 +102,7 @@ const ConPt = () => {
                                     alignItems: 'center'
                                 }}
                             >
-                                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                                <Box component="form" /*onSubmit={handleSubmit}*/ noValidate sx={{ mt: 1 }}>
                                     <TextField
                                         id="side1"
                                         select

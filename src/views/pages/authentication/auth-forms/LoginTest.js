@@ -52,7 +52,7 @@ export default function SignIn() {
                     secure: true,
                     sameSite: true
                 });
-                window.location.replace('/free/dashboard/default');
+                window.location.replace('/dashboard_draft.github.io/#/free/dashboard/default');
             } else if (response.data.error === 'username or password is incorrect') {
                 alert('Failed. Wrong username or password.');
             }
@@ -77,7 +77,7 @@ export default function SignIn() {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
-                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                    <Box component="form" /*onSubmit={handleSubmit}*/ noValidate sx={{ mt: 1 }}>
                         <TextField
                             margin="normal"
                             required
@@ -99,7 +99,7 @@ export default function SignIn() {
                             autoComplete="current-password"
                         />
                         <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
-                        <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                        <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} href='/dashboard_draft.github.io/#/free/dashboard/default' >
                             Sign In
                         </Button>
                         <Grid container>

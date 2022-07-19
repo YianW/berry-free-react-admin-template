@@ -24,12 +24,12 @@ const Dashboard = () => {
         console.log(typeof token);
         if (token === undefined) {
             alert('Please login first.');
-            window.location.replace('/free');
+            window.location.replace('/#/free');
         }
     };
 
     return (
-        <Grid container spacing={gridSpacing} onLoad={verify}>
+        <Grid container spacing={gridSpacing} /*onLoad={verify}*/>
             <Grid item xs={12}>
                 <Grid container spacing={gridSpacing}>
                     <Grid item lg={8} md={12} sm={12} xs={12}>

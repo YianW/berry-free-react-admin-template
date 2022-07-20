@@ -10,37 +10,48 @@ import SubCard from 'ui-component/cards/SubCard';
 import MainCard from 'ui-component/cards/MainCard';
 import { gridSpacing } from 'store/constant';
 
+import Cookies from 'universal-cookie';
+
 import Axios from 'axios';
 import StickyHeadTable from './TxTable';
 
 const SetWal = () => {
     const handleSubmit = (event) => {
+        const cookies = new Cookies();
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        const postRq = {
-            merchant_id: data.get('merchantid'),
-            user_vsys_addr: 'ATse3RcjEzwc5JHDPcduPYe4qA2mWhSNZaV',
-            mojo_amount: data.get('mojo'),
-            pt_amount: data.get('point')
-        };
-        const config = {
-            Headers: {
-                'Access-Control-Allow-Origin': '*'
-            }
-        };
-        console.log(postRq);
-        Axios.post('http://localhost:8080/api/manualtransfer', postRq, config)
-            .then((response) => {
-                console.log('Transaction Succeeded. The transaction id is ', response);
-            })
-            .catch((error) => {
-                alert(error);
-            });
+
+        cookies.set('pinata', data.get('jwt'), {
+            secure: true,
+            sameSite: true
+        });
+
+        console.log(cookies.get('pinata'));
+
+        // const postRq = {
+        //     merchant_id: data.get('merchantid'),
+        //     user_vsys_addr: 'ATse3RcjEzwc5JHDPcduPYe4qA2mWhSNZaV',
+        //     mojo_amount: data.get('mojo'),
+        //     pt_amount: data.get('point')
+        // };
+        // const config = {
+        //     Headers: {
+        //         'Access-Control-Allow-Origin': '*'
+        //     }
+        // };
+        // console.log(postRq);
+        // Axios.post('http://localhost:8080/api/manualtransfer', postRq, config)
+        //     .then((response) => {
+        //         console.log('Transaction Succeeded. The transaction id is ', response);
+        //     })
+        //     .catch((error) => {
+        //         alert(error);
+        //     });
     };
 
     return (
         <>
-            <MainCard title="Insert API Key">
+            <MainCard title="Pinata API">
                 <Grid container spacing={gridSpacing}>
                     <Grid item xs={12}>
                         <SubCard sx={{ paddingTop: 2 }}>
@@ -57,7 +68,7 @@ const SetWal = () => {
                                         <TextField
                                             id="point"
                                             label="API Key"
-                                            name="addr"
+                                            name="jwt"
                                             defaultValue="API Key"
                                             sx={{
                                                 marginLeft: 5,

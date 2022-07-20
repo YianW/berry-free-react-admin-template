@@ -54,6 +54,10 @@ export default function SignUp() {
             if (response.status == 201) {
                 window.location.replace('/free');
             }
+        })
+        .catch((error) => {
+            alert(error);
+            console.log(error);
         });
     };
 

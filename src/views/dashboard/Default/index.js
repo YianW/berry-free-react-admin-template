@@ -4,12 +4,13 @@ import { Grid } from '@mui/material';
 
 import EarningCard from './EarningCard';
 import PopularCard from './PopularCard';
-// import TotalIncomeDarkCard from './TotalIncomeDarkCard';
+import TotalIncomeDarkCard from './TotalIncomeDarkCard';
 import TotalIncomeLightCard from './TotalIncomeLightCard';
 import TotalGrowthBarChart from './TotalGrowthBarChart';
 import { gridSpacing } from 'store/constant';
 
 import Cookies from 'universal-cookie';
+import Axios from 'axios';
 
 const Dashboard = () => {
     const [isLoading, setLoading] = useState(true);
@@ -26,6 +27,25 @@ const Dashboard = () => {
             alert('Please login first.');
             window.location.replace('/free');
         }
+
+        // // const config={
+        // //     Headers: {
+        // //         'Authorization': 'Bearer ' + 
+        // //     }
+        // // }
+
+        // Axios.get('http://localhost:8080/api/user/me', {
+        //     withCredentials: true,
+        //     Headers: {
+        //         'Access-Control-Allow-Origin': '*'
+        //     }
+        // })
+        // .then((response) => {
+        //     console.log(response);
+        // })
+        // .catch((error) => {
+        //     alert(error);
+        // });
     };
 
     return (
@@ -43,7 +63,7 @@ const Dashboard = () => {
                     <Grid item lg={4} md={12} sm={12} xs={12}>
                         <Grid container spacing={gridSpacing}>
                             <Grid item sm={6} xs={12} md={6} lg={12}>
-                                {/* <TotalIncomeDarkCard isLoading={isLoading} /> */}
+                                <TotalIncomeDarkCard isLoading={isLoading} />
                             </Grid>
                             <Grid item sm={6} xs={12} md={6} lg={12}>
                                 <TotalIncomeLightCard isLoading={isLoading} />

@@ -50,12 +50,16 @@ export default function SignIn() {
                 console.log(response.data.token);
                 cookies.set('token', response.data.token, {
                     secure: true,
-                    sameSite: true
+                    sameSite: "strict"
+                    // httpOnly: true
                 });
                 window.location.replace('/free/dashboard/default');
             } else if (response.data.error === 'username or password is incorrect') {
                 alert('Failed. Wrong username or password.');
             }
+        })
+        .catch((error) => {
+            alert(error);
         });
     };
 

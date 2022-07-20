@@ -12,7 +12,7 @@ import Logo from 'ui-component/Logo';
 const LogoSection = () => (
     <ButtonBase disableRipple component={Link} to={config.defaultPath}>
         {/* <Logo /> */}
-        <Typography variant="h3">V systems</Typography>
+        <Typography variant="h3">Mojodomo</Typography>
     </ButtonBase>
 );
 
